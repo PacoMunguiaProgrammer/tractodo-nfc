@@ -34,8 +34,10 @@ small { display: block; font-size: .78rem; color: #d0d9e8; margin-top: .13rem; }
 .camera { width: 1.13rem; height: 1.13rem; border: 2px solid; border-radius: .32rem; display: grid; place-items: center; position: relative; }
 .camera::before { content: ''; width: .39rem; height: .39rem; border: 1.5px solid; border-radius: 50%; }
 .camera::after { content: ''; position: absolute; top: .12rem; right: .12rem; width: .13rem; height: .13rem; border-radius: 50%; background: currentColor; }
-#contacto { scroll-margin-top: 1rem; }
-h2 { margin: 0 0 .7rem; font-size: 1.13rem; }
+.contact-page { width: min(100% - 2rem, 33rem); }
+.contact-heading { display: flex; align-items: center; gap: .75rem; margin: 1.5rem 0 1rem; }
+.contact-heading h1 { margin: 0; font-size: clamp(2.15rem, 7vw, 3.5rem); line-height: 1; }
+.contact-heading .icon { background: #18362e; }
 .contacts { border: 1px solid #29374c; border-radius: 1rem; background: #101725; overflow: hidden; }
 .contacts a { display: flex; align-items: center; gap: .8rem; padding: .85rem 1rem; transition: filter .18s, transform .18s; }
 .contacts a + a { border-top: 1px solid #253146; }
@@ -43,9 +45,9 @@ h2 { margin: 0 0 .7rem; font-size: 1.13rem; }
 .avatar { background: #18362e; color: #9cf2c9; flex: 0 0 2.25rem; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; font-weight: 700; }
 .pdf-page { width: min(100% - 2rem, 70rem); }
 .pdf-top { display: grid; gap: .65rem; margin-bottom: 1rem; }
-.pdf-top a { display: grid; place-items: center; min-height: 44px; padding: .65rem .85rem; text-align: center; border: 1px solid #4c6286; border-radius: .65rem; background: #17233b; }
+.pdf-top a, .back-link { display: grid; place-items: center; min-height: 44px; padding: .65rem .85rem; text-align: center; border: 1px solid #4c6286; border-radius: .65rem; background: #17233b; }
+.back-link { width: max-content; }
 .pdf-title { font-size: clamp(2rem, 7.5vw, 4.5rem); line-height: 1; }
-.pdf-window { display: block; border: 1px solid #354767; border-radius: 1rem; width: 100%; height: 72vh; height: clamp(17rem, 72dvh, 55rem); background: #182237; }
 @media (min-width: 32rem) {
   .pdf-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
