@@ -33,13 +33,16 @@ a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .brand small { display: block; color: #b0c8ea; font: 600 .58rem 'DM Sans', sans-serif; letter-spacing: .24em; }
 .mark { width: 2.7rem; height: 2.7rem; object-fit: cover; border: 1px solid #5bbdff; border-radius: 50%; background: #f7f9ff; box-shadow: 0 0 20px #258aff65; }
 h1 { font: 800 clamp(1.75rem, 9.6vw, 6rem)/.92 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; margin: 1.8rem 0 .95rem; letter-spacing: .015em; overflow-wrap: anywhere; }
-h1 em { color: #66bdff; font-style: normal; }
-.intro p { color: #d6e0ee; margin: 0; font-size: .94rem; }
-.project-lockup { display: flex; align-items: center; gap: clamp(.6rem, 2.5vw, 1rem); margin-bottom: .65rem; }
-.project-lockup h1 { margin: 0; font-size: clamp(2.5rem, 11vw, 6.2rem); }
-.project-emblem { position: relative; flex: 0 0 clamp(3.5rem, 12vw, 6rem); aspect-ratio: 1; overflow: hidden; border-radius: 50%; box-shadow: 0 0 1.25rem #1066eb55; }
-.project-emblem img { position: absolute; width: 216%; height: auto; top: -12.6%; left: -9%; }
-.intro .project-tagline { margin-bottom: .25rem; color: #f7f9ff; font-size: .8rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.project-title {
+  width: min(100%, clamp(12rem, 55vw, 16rem));
+  margin: 0;
+  padding: .65rem .75rem;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 .5rem 1.5rem #03060c88;
+  color: #090d15;
+}
+.project-logo { display: block; width: 100%; height: auto; }
 .actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin: .9rem 0 1.9rem; }
 .tile { --accent: #a294ff; --fill: #30236d; display: flex; align-items: center; gap: .7rem; padding: .95rem; min-height: 4.8rem; border: 1px solid var(--accent); border-radius: 1rem; background: linear-gradient(135deg, var(--fill), #11182a); box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent); }
 .whatsapp { --accent: #43e1a3; --fill: #115640; }
