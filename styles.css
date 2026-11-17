@@ -27,20 +27,9 @@ a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
     linear-gradient(0deg, #080e1ac7, transparent 50%);
   box-shadow: 0 18px 55px #03060c91;
 }
-.hero-brands { display: grid; grid-template-columns: max-content minmax(0, 11rem); align-items: center; gap: clamp(.6rem, 3vw, 1.5rem); }
-.brand { display: flex; align-items: center; gap: clamp(.4rem, 2vw, .75rem); font-family: 'Barlow Condensed', Impact, sans-serif; font-weight: 800; letter-spacing: .08em; font-size: clamp(1rem, 4vw, 1.35rem); }
-.brand small { display: block; color: #b0c8ea; font: 600 clamp(.45rem, 1.5vw, .58rem) 'DM Sans', sans-serif; letter-spacing: .2em; }
-.mark { width: clamp(1.75rem, 8vw, 2.7rem); height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid #5bbdff; border-radius: 50%; background: #f7f9ff; box-shadow: 0 0 20px #258aff65; }
 h1 { font: 800 clamp(1.75rem, 9.6vw, 6rem)/.92 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; margin: 1.8rem 0 .95rem; letter-spacing: .015em; overflow-wrap: anywhere; }
-.project-title {
-  margin: 0;
-  padding: clamp(.35rem, 1.5vw, .65rem);
-  border-radius: .85rem;
-  background: #fff;
-  box-shadow: 0 .5rem 1.5rem #03060c88;
-  color: #090d15;
-}
-.project-logo { display: block; width: 100%; height: auto; }
+/* Bound the previous logo markup when a browser still has the older HTML cached. */
+.hero .project-logo { display: block; max-width: min(100%, 11rem); height: auto; }
 .actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin: .9rem 0 1.9rem; }
 .tile { --accent: #a294ff; --fill: #30236d; display: flex; align-items: center; gap: .7rem; padding: .95rem; min-height: 4.8rem; border: 1px solid var(--accent); border-radius: 1rem; background: linear-gradient(135deg, var(--fill), #11182a); box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent); }
 .whatsapp { --accent: #43e1a3; --fill: #115640; }

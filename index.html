@@ -7,16 +7,69 @@
   <meta name="description" content="Vida NFC reúne el catálogo, los contactos y la ubicación de Tractodo Diesel Parts.">
   <title>Vida NFC | Tractodo Diesel Parts</title>
   <link rel="preload" href="fondo-tractodo.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
+  <style>
+    .hero-brands {
+      --brand-logo-height: clamp(2.5rem, 11vw, 3.6rem);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(.55rem, 2.2vw, 1rem);
+      width: min(100%, 22rem);
+    }
+    .brand-badge {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      height: clamp(4.25rem, 15vw, 5.25rem);
+      min-width: 0;
+      margin: 0;
+      padding: .45rem;
+      border: 1px solid #354767;
+      border-radius: .8rem;
+    }
+    .brand-badge--tractodo {
+      background: #101725;
+      color: #f7f9ff;
+      font: 800 clamp(.75rem, 3.2vw, 1.25rem)/1 'Barlow Condensed', Impact, sans-serif;
+      letter-spacing: .04em;
+    }
+    .brand-badge--tractodo small {
+      display: block;
+      margin-top: .2rem;
+      color: #b0c8ea;
+      font: 600 clamp(.43rem, 1.4vw, .57rem)/1 'DM Sans', sans-serif;
+      letter-spacing: .15em;
+    }
+    .brand-badge img {
+      box-sizing: border-box;
+      display: block;
+      width: auto;
+      height: var(--brand-logo-height);
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .brand-tractodo-logo {
+      flex: none;
+      aspect-ratio: 1;
+      border: 1px solid #5bbdff;
+      border-radius: 50%;
+    }
+    .brand-badge--vida { background: #fff; border-color: #fff; }
+  </style>
   <script src="botones.js" defer></script>
 </head>
 <body class="home-page">
   <main>
     <header class="hero">
       <div class="hero-brands">
-        <div class="brand"><img class="mark" src="tractodo-logo.webp" alt="" width="48" height="48"><span>TRACTODO <small>DIESEL PARTS</small></span></div>
-        <h1 class="project-title">
-          <img class="project-logo" src="vida-nfc.png" alt="Vida NFC. Tu información vital, a un toque de distancia." width="229" height="160">
+        <div class="brand-badge brand-badge--tractodo">
+          <img class="brand-tractodo-logo" src="tractodo-logo.webp" alt="" width="44" height="44">
+          <span>TRACTODO <small>DIESEL PARTS</small></span>
+        </div>
+        <h1 class="brand-badge brand-badge--vida">
+          <img class="brand-vida-logo" src="vida-nfc.png" alt="Vida NFC. Tu información vital, a un toque de distancia." width="96" height="67">
         </h1>
       </div>
     </header>
