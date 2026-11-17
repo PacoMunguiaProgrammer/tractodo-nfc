@@ -36,8 +36,7 @@ h1 { font: 800 clamp(1.75rem, 9.6vw, 6rem)/.92 'Barlow Condensed', Impact, sans-
 h1 em { color: #66bdff; font-style: normal; }
 .intro p { color: #d6e0ee; margin: 0; font-size: .94rem; }
 .actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin: .9rem 0 1.9rem; }
-.tile { --accent: #a294ff; --fill: #30236d; display: flex; align-items: center; gap: .7rem; padding: .95rem; min-height: 4.8rem; border: 1px solid var(--accent); border-radius: 1rem; background: linear-gradient(135deg, var(--fill), #11182a); box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent); transition: filter .18s, transform .18s; }
-.tile:hover, .contacts a:hover { filter: brightness(1.2); transform: translateY(-2px); }
+.tile { --accent: #a294ff; --fill: #30236d; display: flex; align-items: center; gap: .7rem; padding: .95rem; min-height: 4.8rem; border: 1px solid var(--accent); border-radius: 1rem; background: linear-gradient(135deg, var(--fill), #11182a); box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent); }
 .whatsapp { --accent: #43e1a3; --fill: #115640; }
 .facebook { --accent: #4eabff; --fill: #123e80; }
 .instagram { --accent: #ff83b7; --fill: #66285a; }
@@ -58,7 +57,7 @@ small { display: block; font-size: .78rem; color: #d0d9e8; margin-top: .13rem; }
 .contact-heading h1 { margin: 0; font-size: clamp(2.15rem, 7vw, 3.5rem); line-height: 1; }
 .contact-heading .icon { background: #18362e; }
 .contacts { border: 1px solid #29374c; border-radius: 1rem; background: #101725; overflow: hidden; }
-.contacts a { display: flex; align-items: center; gap: .8rem; padding: .85rem 1rem; transition: filter .18s, transform .18s; }
+.contacts a { display: flex; align-items: center; gap: .8rem; padding: .85rem 1rem; background: #101725; }
 .contacts a + a { border-top: 1px solid #253146; }
 .contacts a:focus-visible { outline-offset: -4px; }
 .avatar { background: #18362e; color: #9cf2c9; flex: 0 0 2.25rem; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; font-weight: 700; }
@@ -91,4 +90,41 @@ small { display: block; font-size: .78rem; color: #d0d9e8; margin-top: .13rem; }
 @media (max-width: 24rem) {
   .tile { padding: .75rem; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+:is(.tile, .contacts a, .pdf-top a, .back-link):focus-visible {
+  filter: brightness(1.14);
+}
+@media (hover: hover) and (pointer: fine) {
+  :is(.tile, .contacts a, .pdf-top a, .back-link):hover {
+    filter: brightness(1.16);
+  }
+  .tile:hover {
+    box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 27%, transparent),
+      0 .4rem 1rem color-mix(in srgb, var(--accent) 24%, transparent);
+  }
+  .tile:hover .icon, .contacts a:hover .avatar { --button-detail-transform: translateY(-2px); }
+  :is(.tile, .contacts a):hover b { --button-detail-transform: translateX(3px); }
+}
+:is(.tile, .contacts a, .pdf-top a, .back-link):is(:active, .is-pressed) {
+  filter: brightness(1.23);
+  box-shadow: inset 0 0 0 2px #ffffff6b;
+}
+:is(.tile, .contacts a):is(:active, .is-pressed) :is(.icon, .avatar, b) {
+  --button-detail-transform: scale(.9);
+}
+@media (prefers-reduced-motion: no-preference) {
+  :is(.tile, .contacts a, .pdf-top a, .back-link) {
+    transition: filter .18s ease-out, box-shadow .2s ease-out;
+  }
+  :is(.tile, .contacts a, .pdf-top a, .back-link):is(:active, .is-pressed),
+  :is(.tile, .contacts a):is(:active, .is-pressed) :is(.icon, .avatar, b) {
+    transition-duration: 90ms;
+  }
+  :is(.tile, .contacts a) :is(.icon, .avatar, b) {
+    transform: var(--button-detail-transform, none);
+    transition: transform .2s ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
