@@ -35,9 +35,12 @@ a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 h1 { font: 800 clamp(1.75rem, 9.6vw, 6rem)/.92 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; margin: 1.8rem 0 .95rem; letter-spacing: .015em; overflow-wrap: anywhere; }
 h1 em { color: #66bdff; font-style: normal; }
 .intro p { color: #d6e0ee; margin: 0; font-size: .94rem; }
+.project-lockup { display: flex; align-items: center; gap: clamp(.6rem, 2.5vw, 1rem); margin-bottom: .65rem; }
+.project-lockup h1 { margin: 0; font-size: clamp(2.5rem, 11vw, 6.2rem); }
+.project-emblem { position: relative; flex: 0 0 clamp(3.5rem, 12vw, 6rem); aspect-ratio: 1; overflow: hidden; border-radius: 50%; box-shadow: 0 0 1.25rem #1066eb55; }
+.project-emblem img { position: absolute; width: 216%; height: auto; top: -12.6%; left: -9%; }
+.intro .project-tagline { margin-bottom: .25rem; color: #f7f9ff; font-size: .8rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin: .9rem 0 1.9rem; }
-.nfc-credit { display: grid; justify-items: center; }
-.nfc-credit img { display: block; width: min(100%, 15rem); height: auto; border: 1px solid #354767; border-radius: 1rem; }
 .tile { --accent: #a294ff; --fill: #30236d; display: flex; align-items: center; gap: .7rem; padding: .95rem; min-height: 4.8rem; border: 1px solid var(--accent); border-radius: 1rem; background: linear-gradient(135deg, var(--fill), #11182a); box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 18%, transparent); }
 .whatsapp { --accent: #43e1a3; --fill: #115640; }
 .location { --accent: #ffcb75; --fill: #4b321d; }
@@ -70,19 +73,23 @@ small { display: block; font-size: .78rem; color: #d0d9e8; margin-top: .13rem; }
 .pdf-top { display: grid; gap: .65rem; margin-bottom: 1rem; }
 .pdf-top a, .back-link { display: grid; place-items: center; min-height: 44px; padding: .65rem .85rem; text-align: center; border: 1px solid #4c6286; border-radius: .65rem; background: #17233b; }
 .back-link { width: max-content; }
-.pdf-title, .location-title { font-size: clamp(2rem, 7.5vw, 4.5rem); line-height: 1; }
-.location-address { margin: 0 0 1rem; color: #d6e0ee; font-style: normal; line-height: 1.5; }
-.map-directions { margin-bottom: 1rem; }
-.location-map { display: block; width: 100%; height: clamp(20rem, 58vh, 32rem); border: 1px solid #354767; border-radius: 1rem; background: #17233b; }
+.pdf-title { font-size: clamp(2rem, 7.5vw, 4.5rem); line-height: 1; }
+.location-section { padding: clamp(1rem, 4vw, 1.5rem); scroll-margin-top: 1rem; border: 1px solid #354767; border-radius: 1.25rem; background: #101725; }
+.location-details { display: grid; gap: 1rem; margin-bottom: 1rem; }
+.location-title { margin: 0 0 .55rem; font: 800 clamp(1.8rem, 6vw, 2.55rem)/1 'Barlow Condensed', Impact, sans-serif; text-transform: uppercase; }
+.location-address { color: #d6e0ee; font-style: normal; line-height: 1.5; }
+.map-directions { min-height: 3.65rem; }
+.location-map { display: block; width: 100%; height: clamp(18rem, 50vh, 28rem); border: 1px solid #354767; border-radius: 1rem; background: #17233b; }
 @media (min-width: 32rem) {
   .pdf-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (min-width: 38rem) {
   .actions { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .tile { grid-column: span 2; }
-  .tile.catalog, .tile.whatsapp { grid-column: span 3; }
-  .actions .location { grid-column: 1 / -1; }
+  .actions .tile { grid-column: span 2; }
+  .actions :is(.catalog, .whatsapp) { grid-column: span 3; }
   .hero { min-height: 24rem; }
+  .location-details { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+  .map-directions { min-width: 13rem; }
 }
 @media (min-width: 64rem) {
   .home-page main {
